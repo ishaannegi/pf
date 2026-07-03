@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+
+  graphite-portfolio:
+    image: graphiteapp/graphite-statsd
+    container_name: graphite-portfolio
+    ports:
+      - "8084:80"
+      - "2004:2003"
+    restart: unless-stopped
+    networks:
+      - monitoring-portfolio
+
+  grafana-portfolio:
+    image: grafana/grafana
+    container_name: grafana-portfolio
+    ports:
+      - "3001:3000"
+    networks:
+      - monitoring-portfolio
+
+  nagios-portfolio:
+    image: jasonrivers/nagios
+    container_name: nagios-portfolio
+    ports:
+      - "8085:80"
+    volumes:
+      - ./nagios/portfolio.cfg:/opt/nagios/etc/conf.d/portfolio.cfg:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - monitoring-portfolio
+      - kind
+
+networks:
+  monitoring-portfolio:
+    name: monitoring-portfolio
+  kind:
+    external: true
+    name: kind

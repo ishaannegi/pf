@@ -1,6 +1,6 @@
 export const contactsData = {
     email: 'ishaan.sonic@gmail.com',
-    phone: '',
+    phone: '+91-8920458616',
     address: 'Noida, Uttar Pradesh, India',
     github: 'https://github.com/ishaannegi',
     facebook: '',

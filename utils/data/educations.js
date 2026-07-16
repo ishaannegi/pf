@@ -9,7 +9,7 @@ export const educations = [
     id: 2,
     title: "CBSE Class XII (Science)",
     duration: "2023",
-    institution: "Noida, Uttar Pradesh, India (Science - 83%)",
+    institution: "Noida, Uttar Pradesh, India (Science - 80%)",
   },
   {
     id: 3,

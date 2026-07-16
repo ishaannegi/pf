@@ -1,10 +1,12 @@
-// @flow strict
+"use client";
 import { educations } from "@/utils/data/educations";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
 import lottieFile from '../../../assets/lottie/study.json';
 import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
+import { motion } from "framer-motion";
+import GradientText from "../../helper/gradient-text";
 
 function Education() {
   return (
@@ -26,8 +28,10 @@ function Education() {
       <div className="flex justify-center my-5 lg:py-8">
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#121214]"></span>
-          <span className="bg-[#121214] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Educations
+          <span className="bg-[#121214] w-fit p-2 px-5 text-xl rounded-md">
+            <GradientText colors={['#b4fe15', '#10b981', '#ffffff']}>
+              Educations
+            </GradientText>
           </span>
           <span className="w-24 h-[2px] bg-[#121214]"></span>
         </div>
@@ -44,34 +48,42 @@ function Education() {
           <div>
             <div className="flex flex-col gap-6">
               {
-                educations.map(education => (
-                  <GlowCard key={education.id} identifier={`education-${education.id}`}>
-                    <div className="p-3 relative text-white">
-                      <Image
-                        src="/blur-23.svg"
-                        alt="Hero"
-                        width={1080}
-                        height={200}
-                        className="absolute bottom-0 opacity-80"
-                      />
-                      <div className="flex justify-center">
-                        <p className="text-xs sm:text-sm text-[#b4fe15]">
-                          {education.duration}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-x-8 px-3 py-5">
-                        <div className="text-violet-500  transition-all duration-300 hover:scale-125">
-                          <BsPersonWorkspace size={36} />
-                        </div>
-                        <div>
-                          <p className="text-base sm:text-xl mb-2 font-medium uppercase">
-                            {education.title}
+                educations.map((education, idx) => (
+                  <motion.div
+                    key={education.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.35, delay: idx * 0.1, ease: "easeOut" }}
+                  >
+                    <GlowCard identifier={`education-${education.id}`}>
+                      <div className="p-3 relative text-white">
+                        <Image
+                          src="/blur-23.svg"
+                          alt="Hero"
+                          width={1080}
+                          height={200}
+                          className="absolute bottom-0 opacity-80"
+                        />
+                        <div className="flex justify-center">
+                          <p className="text-xs sm:text-sm text-[#b4fe15]">
+                            {education.duration}
                           </p>
-                          <p className="text-sm sm:text-base">{education.institution}</p>
+                        </div>
+                        <div className="flex items-center gap-x-8 px-3 py-5">
+                          <div className="text-violet-500  transition-all duration-300 hover:scale-125">
+                            <BsPersonWorkspace size={36} />
+                          </div>
+                          <div>
+                            <p className="text-base sm:text-xl mb-2 font-medium uppercase">
+                              {education.title}
+                            </p>
+                            <p className="text-sm sm:text-base">{education.institution}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </GlowCard>
+                    </GlowCard>
+                  </motion.div>
                 ))
               }
             </div>

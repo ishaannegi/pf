@@ -1,11 +1,14 @@
 import * as React from 'react';
+import Image from 'next/image';
 import { BsGithub } from 'react-icons/bs';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { skillsImage } from '@/utils/skill-image';
+import SpotlightCard from '../../helper/spotlight-card';
 
 function ProjectCard({ project }) {
 
   return (
-    <div className="from-[#080808] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
+    <SpotlightCard className="from-[#080808] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full p-0">
       <div className="flex flex-row">
         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
         <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
@@ -16,9 +19,29 @@ function ProjectCard({ project }) {
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
         </div>
-        <p className="text-center ml-3 text-[#b4fe15] text-base lg:text-xl">
-          {project.name}
-        </p>
+        <div className="flex flex-col items-center justify-center">
+          <p className="text-center text-[#b4fe15] text-base lg:text-xl font-bold">
+            {project.name}
+          </p>
+          {/* Tech icons row under title */}
+          <div className="flex flex-row gap-2 mt-2.5 justify-center items-center flex-wrap">
+            {project.tools.map((tool, idx) => {
+              const imgData = skillsImage(tool);
+              if (!imgData) return null;
+              return (
+                <div key={idx} className="w-6 h-6 relative flex items-center justify-center hover:scale-125 transition-transform duration-200" title={tool}>
+                  <Image
+                    src={imgData.src}
+                    alt={tool}
+                    width={20}
+                    height={20}
+                    className="object-contain"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
       <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
         <code className="font-mono text-xs md:text-sm lg:text-base break-words">
@@ -94,8 +117,8 @@ function ProjectCard({ project }) {
           </div>
         )}
       </div>
-    </div>
+    </SpotlightCard>
   );
-};
+}
 
 export default ProjectCard;

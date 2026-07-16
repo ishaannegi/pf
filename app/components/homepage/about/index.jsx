@@ -2,6 +2,7 @@ import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
 import codingAnimation from '../../../assets/lottie/coding.json';
 import AnimationLottie from "../../helper/animation-lottie";
+import GradientText from "../../helper/gradient-text";
 
 
 function AboutSection() {
@@ -10,8 +11,10 @@ function AboutSection() {
       <div className="flex justify-center my-5 lg:py-8">
         <div className="flex items-center">
           <span className="w-24 h-[2px] bg-[#27272a]"></span>
-          <span className="bg-[#121214] w-fit text-white p-2 px-5 text-xl rounded-md font-mono">
-            About Me
+          <span className="bg-[#121214] w-fit p-2 px-5 text-xl rounded-md font-mono">
+            <GradientText colors={['#b4fe15', '#10b981', '#ffffff']}>
+              About Me
+            </GradientText>
           </span>
           <span className="w-24 h-[2px] bg-[#27272a]"></span>
         </div>

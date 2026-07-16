@@ -10,12 +10,16 @@ import { MdAlternateEmail } from "react-icons/md";
 import { SiLeetcode } from "react-icons/si";
 import ContactForm from './contact-form';
 
+import GradientText from '../../helper/gradient-text';
+
 function ContactSection() {
   return (
     <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
       <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#121214] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          CONTACT
+        <span className="bg-[#121214] w-fit rotate-90 p-2 px-5 text-xl rounded-md">
+          <GradientText colors={['#b4fe15', '#10b981', '#ffffff']}>
+            CONTACT
+          </GradientText>
         </span>
         <span className="h-36 w-[2px] bg-[#121214]"></span>
       </div>

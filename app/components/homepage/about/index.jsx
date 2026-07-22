@@ -8,17 +8,9 @@ import GradientText from "../../helper/gradient-text";
 function AboutSection() {
   return (
     <div id="about" className="my-12 lg:my-16 relative">
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex items-center">
-          <span className="w-24 h-[2px] bg-[#27272a]"></span>
-          <span className="bg-[#121214] w-fit p-2 px-5 text-xl rounded-md font-mono">
-            <GradientText colors={['#b4fe15', '#10b981', '#ffffff']}>
-              About Me
-            </GradientText>
-          </span>
-          <span className="w-24 h-[2px] bg-[#27272a]"></span>
-        </div>
-      </div>
+      <h2 className="uppercase text-start text-2xl lg:text-3xl py-8 font-bold tracking-wider text-zinc-500">
+        A BIT <span className="text-white">ABOUT ME</span>
+      </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         <div className="order-2 lg:order-1">
           <p className="text-gray-200 text-sm lg:text-lg leading-relaxed">

@@ -15,14 +15,9 @@ import GradientText from '../../helper/gradient-text';
 function ContactSection() {
   return (
     <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
-      <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#09090b] border border-[#27272a] w-fit rotate-90 p-2 px-5 text-xl rounded-md">
-          <GradientText colors={['#b4fe15', '#10b981', '#ffffff']}>
-            CONTACT
-          </GradientText>
-        </span>
-        <span className="h-36 w-[1px] bg-[#27272a] mt-4"></span>
-      </div>
+      <h2 className="uppercase text-start text-2xl lg:text-3xl py-8 font-bold tracking-wider text-zinc-500">
+        GET IN <span className="text-white">TOUCH</span>
+      </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         <ContactForm />
         <div className="lg:w-3/4 ">

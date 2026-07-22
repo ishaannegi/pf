@@ -20,17 +20,9 @@ function Experience() {
         priority
       />
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[1px] bg-[#27272a]"></span>
-          <span className="bg-[#09090b] border border-[#27272a] w-fit p-2 px-5 text-xl rounded-md">
-            <GradientText colors={['#b4fe15', '#10b981', '#ffffff']}>
-              Experiences
-            </GradientText>
-          </span>
-          <span className="w-24 h-[1px] bg-[#27272a]"></span>
-        </div>
-      </div>
+      <h2 className="uppercase text-start text-2xl lg:text-3xl py-8 font-bold tracking-wider text-zinc-500">
+        PROFESSIONAL <span className="text-white">EXPERIENCE</span>
+      </h2>
 
       <div className="py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">

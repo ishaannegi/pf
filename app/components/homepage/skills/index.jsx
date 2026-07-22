@@ -16,15 +16,9 @@ function Skills() {
         </div>
       </div>
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[1px] bg-[#27272a]"></span>
-          <span className="bg-[#09090b] border border-[#27272a] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Skills
-          </span>
-          <span className="w-24 h-[1px] bg-[#27272a]"></span>
-        </div>
-      </div>
+      <h2 className="uppercase text-start text-2xl lg:text-3xl py-8 font-bold tracking-wider text-zinc-500">
+        TECHNICAL <span className="text-white">SKILLS</span>
+      </h2>
 
       <div className="w-full my-12">
         <Marquee

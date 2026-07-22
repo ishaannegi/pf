@@ -8,19 +8,11 @@ const Projects = () => {
 
   return (
     <div id='projects' className="relative z-50  my-12 lg:my-24">
-      <div className="sticky top-10">
-        <div className="w-[80px] h-[80px] bg-violet-100 rounded-full absolute -top-3 left-0 translate-x-1/2 filter blur-3xl  opacity-30"></div>
-        <div className="flex items-center justify-start relative">
-          <span className="bg-[#09090b] border border-[#27272a] absolute left-0  w-fit px-5 py-3 text-xl rounded-md">
-            <GradientText colors={['#b4fe15', '#10b981', '#ffffff']}>
-              PROJECTS
-            </GradientText>
-          </span>
-          <span className="w-full h-[1px] bg-[#27272a]"></span>
-        </div>
-      </div>
+      <h2 className="uppercase text-start text-2xl lg:text-3xl py-8 font-bold tracking-wider text-zinc-500">
+        FEATURED <span className="text-white">PROJECTS</span>
+      </h2>
 
-      <div className="pt-24">
+      <div className="pt-8">
         <div className="flex flex-col gap-6">
           {projectsData.slice(0, 4).map((project, index) => (
             <motion.div
